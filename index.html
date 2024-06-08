@@ -10,6 +10,10 @@
   <h1>Input Data Balita</h1>
   <hr>
   <br>
+  <label for="namefather">Nama Ayah:</label>
+  <input type="text" id="nameFather" name="nameFather" required>
+  <label for="nameMother">Nama Ibu:</label>
+  <input type="text" id="nameMother" name="nameMother" required>
   <label for="name">Nama Balita:</label>
   <input type="text" id="name" name="name" required>
   <label for="birthplace">Tempat Lahir:</label>
@@ -33,17 +37,21 @@
   updateClock();
 
   function goToPage2() {
+    const nameFather = document.getElementById('nameFather').value;
+    const nameMother = document.getElementById('nameMother').value;
     const name = document.getElementById('name').value;
     const birthplace = document.getElementById('birthplace').value;
     const birthdate = document.getElementById('birthdate').value;
     const photoInput = document.getElementById('photo').files[0]; // Unggah file foto balita
 
-    if (!name || !birthplace || !birthdate || !photoInput) {
+    if (!nameFather || !nameMother || !name || !birthplace || !birthdate || !photoInput) {
       alert('Harap isi semua data.');
       return;
     }
 
     // Simpan data ke lokal storage
+    localStorage.setItem('nameFather', nameFather);
+    localStorage.setItem('nameMother', nameMother);
     localStorage.setItem('name', name);
     localStorage.setItem('birthplace', birthplace);
     localStorage.setItem('birthdate', birthdate);
