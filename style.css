@@ -1,0 +1,132 @@
+  @keyframes moveBackground {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+  }
+
+  body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+    background: linear-gradient(270deg, #00ff15, #dad1d1);
+    background-size: 400% 400%;
+    animation: moveBackground 10s ease infinite;
+  }
+  #clock {
+    background-color: #000000;
+    color: #fff;
+    padding: 20px;
+    border-radius: 50%;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    font-size: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 60px;
+    height: 60px;
+    position: fixed;
+    top: 5px; 
+    right:5px; }
+    
+  .container {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    max-width: 500px; /* Set a maximum width */
+    margin: 50px auto; /* Center the container horizontally and add vertical space */
+  }
+
+  h1 {
+    color: #333;
+  }
+
+  input[type="number"], select{
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    box-sizing: border-box;
+  }
+  input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    box-sizing: border-box;
+  }
+  input[type="date"] {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    box-sizing: border-box;
+  }
+  input[type="file"] {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    box-sizing: border-box;
+  }
+  .next-btn {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    margin: 10px 0;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    font-weight: bolder;
+  }
+  .next-btn:hover {
+    background-color: #1d6d24;
+  }
+  .print-btn {
+    background-color: #ff0000;
+    color: #fff;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+  }
+  .print-btn:hover {
+    background-color: #570909;
+  }
+  .result {
+    margin-top: 20px;
+    font-size: 18px;
+    color: #333;
+    font-weight: bold;
+  }
+  .result-severely-stunted {
+      color: rgb(255, 0, 0);
+      font-size: large;
+      font-weight: bold;
+  }
+  .result-stunted {
+      color: rgb(190, 41, 66);
+      font-weight: bold;
+      font-size: large;
+  }
+  .result-normal {
+      color: black;
+      font-size: large;
+      font-weight: bold;
+  }
+  .result-tall {
+      color: limegreen;
+      font-weight: bold;
+      font-size: large;
+  }

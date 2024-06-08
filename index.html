@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Input Data Balita</title>
+  <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+  <div class="header" id="clock"></div>
+<div class="container">
+  <h1>Input Data Balita</h1>
+  <hr>
+  <br>
+  <label for="name">Nama Balita:</label>
+  <input type="text" id="name" name="name" required>
+  <label for="birthplace">Tempat Lahir:</label>
+  <input type="text" id="birthplace" name="birthplace" required>
+  <label for="birthdate">Tanggal Lahir:</label>
+  <input type="date" id="birthdate" name="birthdate" required>
+  <label for="photo">Foto Balita:</label>
+  <input type="file" id="photo" name="photo" accept="image/*" required>
+  <button class="next-btn" onclick="goToPage2()">Lanjut ke Halaman Klasifikasi</button>
+</div>
+<script>
+  function updateClock() {
+    const now = new Date();
+    const hours = String(now.getHours()).padStart(2, '0');
+    const minutes = String(now.getMinutes()).padStart(2, '0');
+    const seconds = String(now.getSeconds()).padStart(2, '0');
+    document.getElementById('clock').innerHTML = `${hours}:${minutes}:${seconds}`;
+  }
+
+  setInterval(updateClock, 1000);
+  updateClock();
+
+  function goToPage2() {
+    const name = document.getElementById('name').value;
+    const birthplace = document.getElementById('birthplace').value;
+    const birthdate = document.getElementById('birthdate').value;
+    const photoInput = document.getElementById('photo').files[0]; // Unggah file foto balita
+
+    if (!name || !birthplace || !birthdate || !photoInput) {
+      alert('Harap isi semua data.');
+      return;
+    }
+
+    // Simpan data ke lokal storage
+    localStorage.setItem('name', name);
+    localStorage.setItem('birthplace', birthplace);
+    localStorage.setItem('birthdate', birthdate);
+
+    const reader = new FileReader();
+    reader.onloadend = function() {
+      localStorage.setItem('photo', reader.result); // Simpan foto balita dalam format base64
+      window.location.href = 'input data klasifikasi.html';
+    };
+    reader.readAsDataURL(photoInput); // Baca file foto dan simpan ke local storage
+  }
+</script>
+</body>
+</html>
