@@ -32,7 +32,7 @@
 
     const startTime = performance.now();
 
-    const response = await fetch('https://raw.githubusercontent.com/azpjago/azpjago.github.io/master/knn_model.json');
+    const response = await fetch('https://raw.githubusercontent.com/azpjago/azpjago.github.io/main/knn_model.json');
     if (!response.ok) {
       document.getElementById('result').innerHTML = "Error: Gagal memuat model klasifikasi.";
       return;
