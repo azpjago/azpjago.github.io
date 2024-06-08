@@ -189,7 +189,14 @@
     doc.text(12, 112, `${time}`);
     doc.text(`Tanggal Proses: ${tgl}`, 200, 280, { align: 'right' }); // Judul header di tengah
     doc.text(`Jam Proses: ${currentTime}`, 200, 285, { align: 'right' }); // Judul header di tengah
-
+    doc.setProperties({
+      title: 'Laporan Hasil Klasifikasi stunting Balita di Desa Ganjar Sabar',
+      subject: 'Digunakan untuk keperluan laporan, dan penanganan lebih lanjut mengenai Stunting',
+      author: 'Asep Saepul Anwar',
+      Desa: 'Ganjar Sabar',
+      keywords: 'generated, javascript, web 2.0, ajax',
+      creator: 'Asep Saepul Anwar - Desa Ganjar Sabar'
+    });
     const stuntingHandling = {
         'Severely Stunted (Stunting parah)': ['Konsultasi dengan dokter spesialis anak', 'Pemberian nutrisi tinggi', 'Pemantauan kesehatan balita yang ketat'],
         'Stunted (Stunting)': ['Konsultasi dengan ahli gizi', 'Pemberian makanan bergizi seimbang', 'Aktivitas fisik yang sesuai'],
