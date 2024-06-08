@@ -211,10 +211,10 @@
     doc.text(12, 142, 'Penanganan:');
       if (handlingList) {
         handlingList.forEach((item, index) => {
-          doc.text(30, 142 + index * 10, `- ${item}`);
+          doc.text(30, 152 + index * 10, `- ${item}`);
         });
       } else {
-        doc.text(30, 142, '- Tidak ada penanganan khusus');
+        doc.text(30, 152, '- Tidak ada penanganan khusus');
       }
 
     doc.save(`hasil_klasifikasi_${name}.pdf`);
