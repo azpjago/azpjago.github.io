@@ -126,6 +126,8 @@
   function printPDF() {
     const { jsPDF } = window.jspdf; // Pastikan ini mendukung API yang sama
     const doc = new jsPDF();
+    const nameFather = localStorage.getItem('nameFather');
+    const nameMother = localStorage.getItem('nameMother');
     const name = localStorage.getItem('name');
     const birthplace = localStorage.getItem('birthplace');
     function formatBirthdate() {
@@ -178,15 +180,17 @@
     doc.addImage(photo, 'JPEG', 150, 28, 50, 50, {align:'right'}); // Menerapkan gambar yang diambil dari URL
     // doc.setFont('TImes New Roman','bold');
     doc.setFontSize(14);
-    doc.text(12, 32, 'Data Balita');
-    doc.text(12, 42, `Nama: ${name}`);
-    doc.text(12, 52, `Tempat, Tanggal Lahir: ${birthplace}, ${birthdateFormatted}`);
-    doc.text(12, 62, `Usia: ${age} bulan`);
-    doc.text(12, 72, `Jenis Kelamin: ${gender}`);
-    doc.text(12, 82, `Tinggi Badan: ${height} cm`);
-    doc.text(12, 92, `Berat Badan : ${weight} kg`);
-    doc.text(12, 102, `${hasil}`);
-    doc.text(12, 112, `${time}`);
+    doc.text(12, 32, 'Stunting Report');
+    doc.text(12, 42, `Nama Ayah: ${nameFather}`);
+    doc.text(12, 52, `Nama Ibu: ${nameMother}`);
+    doc.text(12, 62, `Nama: ${name}`);
+    doc.text(12, 72, `Tempat, Tanggal Lahir: ${birthplace}, ${birthdateFormatted}`);
+    doc.text(12, 82, `Usia: ${age} bulan`);
+    doc.text(12, 92, `Jenis Kelamin: ${gender}`);
+    doc.text(12, 102, `Tinggi Badan: ${height} cm`);
+    doc.text(12, 112, `Berat Badan : ${weight} kg`);
+    doc.text(12, 122, `${hasil}`);
+    doc.text(12, 132, `${time}`);
     doc.text(`Tanggal Proses: ${tgl}`, 200, 280, { align: 'right' }); // Judul header di tengah
     doc.text(`Jam Proses: ${currentTime}`, 200, 285, { align: 'right' }); // Judul header di tengah
     doc.setProperties({
@@ -204,7 +208,7 @@
         'Tall (Tinggi)': ['Menjaga pola makan yang sehat', 'Aktivitas fisik yang seimbang']
     };
     const handlingList = stuntingHandling[hasil_pred];
-    doc.text(12, 132, 'Penanganan:');
+    doc.text(12, 142, 'Penanganan:');
       if (handlingList) {
         handlingList.forEach((item, index) => {
           doc.text(30, 142 + index * 10, `- ${item}`);
