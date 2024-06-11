@@ -13,7 +13,7 @@
   <div id="Waktu"></div>
   <hr>
   <br>
-  <button class="print-btn" onclick="printPDF()" >Print PDF</button>
+  <button class="print-btn" onclick="printPDF()" >Unduh Laporan</button></button>
   <div id="teks"></div>
 </div>
 <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs"></script>
@@ -107,7 +107,7 @@
     }
     document.getElementById('result').innerHTML = `${hasil_pred}`;
     document.getElementById('Waktu').innerHTML = `Waktu Proses: ${processingTime.toFixed(2)} Detik`;
-    document.getElementById('teks').innerHTML = `Download file PDF, untuk mendapatkan laporan lebih lengkap!`;
+    document.getElementById('teks').innerHTML =`Unduh Laporan untuk mendapatkan laporan lebih lengkap!`;
   }
 
   classify();
